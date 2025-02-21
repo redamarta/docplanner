@@ -1,0 +1,6 @@
+dbt-core==1.9.1
+dbt-snowflake==1.9.0
+elementary-data[snowflake]==0.16.1
+pytz==2024.2
+pytest==8.3.4
+setuptools==75.8.0
