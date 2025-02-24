@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_docplanner__patients
+    columns:
+      - name: patient_id
+        description: Unique identifier for each patient.
+        data_tests:
+          - dbt_constraints.primary_key
+      - name: first_name
+        description: Patient's first name.
+      - name: last_name
+        description: Patient's last name.
+      - name: date_of_birth
+        description: Patient's date of birth.
+      - name: gender
+        description: Patient's gender.
+      - name: email
+        description: Patient's email address.
+      - name: phone_number
+        description: Patient's phone number.
+      - name: created_at
+        description: Timestamp when the patient record was created.
+      - name: updated_at
+        description: Timestamp when the patient record was last updated.

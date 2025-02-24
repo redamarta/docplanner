@@ -39,3 +39,6 @@ models:
         core:
             schema: "core"
             materialized: table
+        utils:
+            schema: "utils"
+            materialized: table

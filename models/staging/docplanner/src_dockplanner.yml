@@ -1,0 +1,38 @@
+version: 2
+
+sources:
+  - name: staging_docplanner
+    description: >
+      This source contains operational data related to patient visits, bookings, doctors, patients, clinics, 
+      and calendars. It covers the lifecycle from booking an appointment to attending the visit.
+    database: RAW_PROD
+
+    tables:
+      - name: bookings
+        description: >
+          This table records all booking events for patient visits, including patient, doctor, and secretary bookings.
+          It captures the source of booking, timestamps, and any changes (e.g., moved or canceled appointments).
+
+      - name: visits
+        description: >
+          This table records actual visits that result from bookings, including completion, cancellations, and no-shows.
+          Each visit links to the original booking via `booking_id`.
+
+      - name: doctors
+        description: >
+          This table contains information about doctors, including their identification, specialties, and work locations.
+          Doctors can work independently, in clinics, or both.
+
+      - name: patients
+        description: >
+          This table contains information about patients, including unique identifiers and personal details. 
+
+      - name: clinics
+        description: >
+          This table stores data about clinics, including their locations, services offered, and associated doctors.
+          Clinics can have multiple branches in different locations.
+
+      - name: calendars
+        description: >
+          This table represents virtual calendars where appointments are scheduled. 
+          Calendars can be associated with individual doctors, clinics, or specific services like lab tests.
