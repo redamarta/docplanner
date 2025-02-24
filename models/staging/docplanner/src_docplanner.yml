@@ -13,11 +13,6 @@ sources:
           This table records all booking events for patient visits, including patient, doctor, and secretary bookings.
           It captures the source of booking, timestamps, and any changes (e.g., moved or canceled appointments).
 
-      - name: visits
-        description: >
-          This table records actual visits that result from bookings, including completion, cancellations, and no-shows.
-          Each visit links to the original booking via `booking_id`.
-
       - name: doctors
         description: >
           This table contains information about doctors, including their identification, specialties, and work locations.
@@ -34,5 +29,5 @@ sources:
 
       - name: calendars
         description: >
-          This table represents virtual calendars where appointments are scheduled. 
-          Calendars can be associated with individual doctors, clinics, or specific services like lab tests.
+          This table represents the scheduling system for appointments, including available time slots for doctors and services.
+          It includes virtual calendars linked to doctors or specific services such as lab tests in clinics.

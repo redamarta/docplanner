@@ -9,5 +9,4 @@
     , specializations --list
     , created_at
     , updated_at
-    --, deactivated_at
 from {{ ref('stg_docplanner__doctors') }}

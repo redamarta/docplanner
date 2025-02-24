@@ -7,7 +7,7 @@ select
     , email
     , city
     , specializations --list
+    , addresses --list
     , created_at
     , updated_at
-    --, deactivated_at
 from {{ source('staging_docplanner', 'doctors') }}
