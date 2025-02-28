@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: mart_patients_metrics_monthly
+    description: Monthly metrics for patient bookings.
+    columns:
+      - name: booking_month
+        description: The month of the booking.
+        data_tests:
+          - dbt_constraints.primary_key
+      - name: total_patients
+        description: Total number of patients.
+      - name: mobile_bookings
+        description: Total number of bookings made through the Mobile App.
+      - name: rebooking_patients
+        description: Number of patients who rebooked.
+      - name: rebooking_rate
+        description: Percentage of patients who rebooked.
+      - name: other_bookings
+        description: Total number of bookings made through other sources.
+      - name: percent_mobile_to_others
+        description: Percentage of Mobile App bookings in relation to other sources.

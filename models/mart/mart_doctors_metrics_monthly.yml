@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: mart_doctors_metrics_monthly
+    description: Monthly metrics for doctor engagement.
+    columns:
+      - name: booking_month
+        description: The calendar month of the booking.
+        data_tests:
+          - dbt_constraints.primary_key
+      - name: nb_of_engaged_doctors
+        description: Number of engaged doctors.
+      - name: nb_of_engaged_doctors_with_at_least_3_patients
+        description: Number of engaged doctors with at least 3 bookings from unique patients monthly.
+      - name: nb_of_new_engaged_doctors
+        description: Number of new engaged doctors.
+      - name: nb_of_new_engaged_doctors_with_1_new_patient
+        description: Number of new engaged doctors that get 1 new patient from the marketplace in the 1st month after becoming engaged.
+      - name: percent_of_new_engaged_doctors_with_1_new_patient
+        description: Percent of new engaged doctors that get 1 new patient from the marketplace in the 1st month after becoming engaged.
+      - name: nb_of_new_engaged_doctors_with_2_new_patients
+        description: Number of new engaged doctors that get 2 patient bookings from new and unique patients in the 1st month after becoming engaged.

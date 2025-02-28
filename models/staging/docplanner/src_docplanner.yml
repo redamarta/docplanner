@@ -6,6 +6,10 @@ sources:
       This source contains comprehensive operational data from the Docplanner system, 
       including information on bookings, doctors, patients, medical facilities, and appointment calendars.
     database: RAW_PROD
+    freshness:
+      error_after:
+        period: hour
+        count: 24
 
     tables:
       - name: bookings

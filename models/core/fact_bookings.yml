@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fact_bookings
+    description: Fact table containing booking information made by doctors and patients.
+    columns:
+      - name: original_booking_id
+        description: Original identifier for the booking.
+      - name: booking_id
+        description: Unique identifier for the booking.
+        data_tests:
+          - dbt_constraints.primary_key
+      - name: calendar_id
+        description: Identifier for the calendar.
+        data_tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('dim_calendars')
+              pk_column_name: calendar_id
+      - name: doctor_id
+        description: Identifier for the doctor.
+        data_tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('dim_doctors')
+              pk_column_name: doctor_id
+      - name: patient_id
+        description: Identifier for the patient.
+        data_tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('dim_patients')
+              pk_column_name: patient_id
+      - name: created_at
+        description: Timestamp when the booking was created.
+      - name: status
+        description: Status of the booking.
+      - name: source
+        description: Source of the booking.
+      - name: booked_by
+        description: Indicates who booked the appointment.
+        data_tests:
+          - accepted_values:
+              values:
+                ["Patient", "Doctor", "Secretary"]
+      - name: canceled_at
+        description: Timestamp when the booking was canceled.

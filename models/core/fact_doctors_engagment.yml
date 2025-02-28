@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: fact_doctors_engagment
+    description: A doctor's engagement can be understood as their willingness to create bookings regularly.
+    columns:
+      - name: doctor_id
+        description: Unique identifier for the doctor.
+      - name: booking_month
+        description: The calendar month of the booking.
+      - name: is_engaged
+        description: Indicates if the doctor is engaged based on the criteria.
+      - name: is_first_engagement_month
+        description: Indicates if it is the first month the doctor is engaged.
+      - name: first_engagement_month
+        description: The first month the doctor was engaged.
+      - name: nb_of_new_patients_from_markeplace
+        description: Number of new patients from the marketplace.
+      - name: nb_of_new_patients
+        description: Number of new patients.
+      - name: nb_of_unique_patients
+        description: Number of unique patients.
+      - name: total_bookings
+        description: Total number of bookings.
+      - name: total_patient_bookings
+        description: Total number of bookings made by patients.
+      - name: total_doctor_bookings
+        description: Total number of bookings made by doctors.
+
+    data_tests:
+      - dbt_constraints.primary_key:
+          column_names:
+            - doctor_id
+            - booking_month

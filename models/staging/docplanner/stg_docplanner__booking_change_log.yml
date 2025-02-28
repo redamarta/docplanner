@@ -7,3 +7,5 @@ models:
         description: The original booking ID.
       - name: booking_id
         description: The booking ID.
+        data_tests:
+          - dbt_constraints.primary_key

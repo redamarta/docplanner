@@ -4,13 +4,13 @@ models:
   - name: stg_docplanner__patients
     columns:
       - name: patient_id
-        description: Unique identifier for each patient.
+        description: '{{ doc("stg_docplanner__patients__patient_id") }}'
         data_tests:
           - dbt_constraints.primary_key
       - name: first_name
-        description: Patient's first name.
+        description: '{{ doc("stg_docplanner__patients__first_name") }}'
       - name: last_name
-        description: Patient's last name.
+        description: '{{ doc("stg_docplanner__patients__last_name") }}'
       - name: date_of_birth
         description: Patient's date of birth.
       - name: country_code
