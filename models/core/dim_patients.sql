@@ -4,7 +4,6 @@ select
     , last_name
     , date_of_birth
     , country_code
-    , gender
     , address
     , phonen_number
     , email

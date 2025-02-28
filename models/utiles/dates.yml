@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: dates
+    columns:
+      - name: date_day
+        description: The day of the date.
+        data_tests:
+          - dbt_constraints.primary_key
+      - name: year_month
+        description: The year and month of the date.
+      - name: week_of_year
+        description: The week of the year of the date.
+      - name: week_status
+        description: The status of the week in given month, either full (7 days) or partial (less than 7 days).

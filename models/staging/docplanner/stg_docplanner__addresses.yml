@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: stg_docplanner__addresses
+    columns:
+      - name: address_id
+        description: Unique identifier for address ID.
+        data_tests:
+          - dbt_constraints.primary_key
+      - name: facility_id
+        description: Unique identifier for the facility.
+      - name: patient_id
+        description: The patient ID who made the booking.
+      - name: doctor_id
+        description: The unique identifier for the doctor.
+      - name: name
+        description: The name of the address.
+      - name: street
+        description: The street address.
+      - name: postal_code
+        description: The postal code.
+      - name: only_online
+        description: Indicating the addresses that are dedicated to video consultations.

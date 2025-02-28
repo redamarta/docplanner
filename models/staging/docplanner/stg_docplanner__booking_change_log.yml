@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: stg_docplanner__booking_change_log
+    columns:
+      - name: original_booking_id
+        description: The original booking ID.
+      - name: booking_id
+        description: The booking ID.

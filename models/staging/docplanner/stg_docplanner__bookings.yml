@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: stg_docplanner__bookings
+    columns:
+      - name: booking_id
+        description: Unique identifier for each booking.
+        data_tests:
+          - dbt_constraints.primary_key
+      - name: calendar_id
+        description: The calendar ID where the booking was made.
+      - name: patient_id
+        description:  The patient ID who made the booking.
+      - name: doctor_id
+        description: The doctor ID who the booking was made with.
+      - name: created_at
+        description: The timestamp when the booking was made.
+      - name: start_at
+        description: The timestamp when the booking starts.
+      - name: end_at
+        description: The timestamp when the booking ends.
+      - name: duration
+        description: The duration of the booking in minutes.
+      - name: service
+        description: The service that was booked.
+      - name: source
+        description: The platform through which the booking was made (e.g., desktop website, mobile app, website widget, etc.).
+      - name: canceled_at
+        description: The timestamp when the booking was canceled.

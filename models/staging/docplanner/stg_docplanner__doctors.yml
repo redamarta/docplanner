@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_docplanner__doctors
+    description: This table contains the staging data for doctors from the Docplanner source.
+    columns:
+      - name: doctor_id
+        description: The unique identifier for the doctor.
+        data_tests:
+          - dbt_constraints.primary_key
+      - name: first_name
+        description: The first name of the doctor.
+      - name: last_name
+        description: The last name of the doctor.
+      - name: phone_number
+        description: The phone number of the doctor.
+      - name: profile_url
+        description: The profile URL of the doctor.
+      - name: email
+        description: The email address of the doctor.
+      - name: city
+        description: The city where the doctor is located.
+      - name: specializations
+        description: The list of specializations of the doctor.
+      - name: created_at
+        description: The timestamp when the doctor record was created.
+      - name: updated_at
+        description: The timestamp when the doctor record was last updated.

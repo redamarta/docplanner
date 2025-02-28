@@ -3,31 +3,31 @@ version: 2
 sources:
   - name: staging_docplanner
     description: >
-      This source contains operational data related to patient visits, bookings, doctors, patients, clinics, 
-      and calendars. It covers the lifecycle from booking an appointment to attending the visit.
+      This source contains comprehensive operational data from the Docplanner system, 
+      including information on bookings, doctors, patients, medical facilities, and appointment calendars.
     database: RAW_PROD
 
     tables:
       - name: bookings
         description: >
-          This table records all booking events for patient visits, including patient, doctor, and secretary bookings.
-          It captures the source of booking, timestamps, and any changes (e.g., moved or canceled appointments).
+          This table records all booking events It captures the source of booking,
+          timestamps, and any changes (e.g., moved or canceled appointments).
 
       - name: doctors
-        description: >
-          This table contains information about doctors, including their identification, specialties, and work locations.
-          Doctors can work independently, in clinics, or both.
+        description: This table contains information about doctors, including their identification, specialties, and work locations.
 
       - name: patients
+        description: This table contains information about patients, including unique identifiers and personal details. 
+      
+      - name: addresses
         description: >
-          This table contains information about patients, including unique identifiers and personal details. 
-
-      - name: clinics
-        description: >
-          This table stores data about clinics, including their locations, services offered, and associated doctors.
-          Clinics can have multiple branches in different locations.
+          This table contains unique addresses for doctors in specific facilities. Each address has a unique identifier (address_id)
+          and represents a specific location where a doctor can be found.
 
       - name: calendars
         description: >
           This table represents the scheduling system for appointments, including available time slots for doctors and services.
           It includes virtual calendars linked to doctors or specific services such as lab tests in clinics.
+
+      - name: booking_change_log
+        description: It contains the link between the booking and the changes made to it.

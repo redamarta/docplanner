@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_docplanner__calendars
+    description: The calendar is a virtual mapping of real address and a doctor schedule.
+    columns:
+      - name: calendar_id
+        description: Unique identifier for the calendar.
+      - name: address_id
+        description: .Identifier for the address.
+      - name: doctor_id
+        description: Identifier for the doctor.
+      - name: status
+        description: Status of the calendar, either enable or disable.
+      - name: slots
+        description: Variant with information such as start, end, service, duration.
+      - name: created_at
+        description: Timestamp when the calendar was created.
+      - name: updated_at
+        description: Timestamp when the calendar was updated.

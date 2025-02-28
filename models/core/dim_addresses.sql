@@ -7,4 +7,4 @@ select
     , post_code
     , street
     , only_online
-from {{ source('staging_docplanner', 'addresses') }}
+from {{ ref('stg_docplanner__addresses') }}

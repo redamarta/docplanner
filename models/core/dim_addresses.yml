@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_addresses
+    columns:
+      - name: address_id
+        description: Unique identifier for address ID.
+        data_tests:
+          - dbt_constraints.primary_key
+      - name: facility_id
+        description: Unique identifier for the facility.
+      - name: patient_id
+        description: The patient ID who made the booking.
+        data_tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('dim_patients')
+              pk_column_name: patient_id
+      - name: doctor_id
+        description: The unique identifier for the doctor.
+        data_tests:
+          - dbt_constraints.foreign_key:
+              pk_table_name: ref('dim_doctors')
+              pk_column_name: doctor_id
+      - name: name
+        description: The name of the address.
+      - name: street
+        description: The street address.
+      - name: postal_code
+        description: The postal code.
+      - name: only_online
+        description: Identifies if the address is only for online appoitments.

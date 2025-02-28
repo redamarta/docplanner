@@ -13,8 +13,8 @@ models:
         description: Patient's last name.
       - name: date_of_birth
         description: Patient's date of birth.
-      - name: gender
-        description: Patient's gender.
+      - name: country_code
+        description: The coudntry code of the patient.
       - name: email
         description: Patient's email address.
       - name: phone_number
